@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr33uu0o8jkkm"]
+
+[ext_resource type="Script" path="res://vanthinh/TrangChu/trang_chu.gd" id="1_8qt2g"]
+[ext_resource type="Texture2D" uid="uid://dwdfryu8feljb" path="res://vanthinh/TrangChu/img/backgroundTrangchu.png" id="1_muuoa"]
+[ext_resource type="Texture2D" uid="uid://c14aqj87d48wt" path="res://vanthinh/TrangChu/img/button_gamemoi.jpg" id="2_h7pfc"]
+[ext_resource type="Texture2D" uid="uid://cpumbfwwrb7vs" path="res://vanthinh/TrangChu/img/facebook.png" id="3_u15lb"]
+[ext_resource type="Texture2D" uid="uid://rotvi2ieag0t" path="res://vanthinh/TrangChu/img/setting.png" id="4_dy3qk"]
+[ext_resource type="Texture2D" uid="uid://bha7pmu862qto" path="res://vanthinh/TrangChu/img/QuanLyDuLieu.png" id="5_ex3uh"]
+[ext_resource type="PackedScene" uid="uid://del8pixvbe30d" path="res://vanthinh/MenuCaiDat/menu_cai_dat.tscn" id="7_7vf47"]
+
+[node name="TrangChu" type="Node2D"]
+script = ExtResource("1_8qt2g")
+
+[node name="BackgroundTrangchu" type="Sprite2D" parent="."]
+position = Vector2(575.5, 324)
+scale = Vector2(0.797917, 0.891667)
+texture = ExtResource("1_muuoa")
+
+[node name="ButtonGamemoi" type="Sprite2D" parent="."]
+position = Vector2(596, 573)
+scale = Vector2(0.486068, 0.462366)
+texture = ExtResource("2_h7pfc")
+
+[node name="Facebook" type="Sprite2D" parent="."]
+position = Vector2(1072, 565)
+scale = Vector2(0.769231, 0.73)
+texture = ExtResource("3_u15lb")
+
+[node name="QuanLyDuLieu" type="Sprite2D" parent="."]
+position = Vector2(95.875, 463)
+scale = Vector2(0.764286, 1)
+texture = ExtResource("5_ex3uh")
+
+[node name="Button_setting" type="Button" parent="."]
+offset_left = 52.0
+offset_top = 522.0
+offset_right = 136.0
+offset_bottom = 613.0
+
+[node name="Setting" type="Sprite2D" parent="Button_setting"]
+position = Vector2(42, 46)
+scale = Vector2(0.0571429, 0.0729443)
+texture = ExtResource("4_dy3qk")
+
+[node name="MenuCaiDat" parent="." instance=ExtResource("7_7vf47")]
+
+[connection signal="pressed" from="Button_setting" to="." method="_on_button_setting_pressed"]

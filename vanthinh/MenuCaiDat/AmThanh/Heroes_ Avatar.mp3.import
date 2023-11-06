@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://do8yh0foq6owy"
+path="res://.godot/imported/Heroes_ Avatar.mp3-3349fa2fa59fd13b4582467599bcc3eb.mp3str"
+
+[deps]
+
+source_file="res://vanthinh/MenuCaiDat/AmThanh/Heroes_ Avatar.mp3"
+dest_files=["res://.godot/imported/Heroes_ Avatar.mp3-3349fa2fa59fd13b4582467599bcc3eb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

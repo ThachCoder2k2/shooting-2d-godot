@@ -1,0 +1,142 @@
+[gd_scene load_steps=12 format=3 uid="uid://del8pixvbe30d"]
+
+[ext_resource type="Texture2D" uid="uid://u7a0lcxksq73" path="res://vanthinh/MenuCaiDat/img/background_menusetting.png" id="1_faqrh"]
+[ext_resource type="Script" path="res://vanthinh/MenuCaiDat/menu_cai_dat.gd" id="1_i4mox"]
+[ext_resource type="Texture2D" uid="uid://c0xrauod4qrfq" path="res://vanthinh/MenuCaiDat/img/thietlap.png" id="2_lw874"]
+[ext_resource type="Texture2D" uid="uid://wbi5qpg8oaht" path="res://vanthinh/MenuCaiDat/img/closeButton.png" id="3_meckq"]
+[ext_resource type="Texture2D" uid="uid://dn38khmo4p3a5" path="res://vanthinh/MenuCaiDat/img/tieuDeAmThanh.png" id="4_xl4bn"]
+[ext_resource type="Texture2D" uid="uid://bp8d1bcjhxlr6" path="res://vanthinh/MenuCaiDat/img/iconItemLoa.png" id="5_mh1fu"]
+[ext_resource type="Texture2D" uid="uid://cmbuv8qo2r6y7" path="res://vanthinh/MenuCaiDat/img/iconItemNhac.png" id="6_w17b1"]
+[ext_resource type="Texture2D" uid="uid://dwn7tf6sy5vwa" path="res://vanthinh/MenuCaiDat/img/iconItemAmLuong.png" id="7_p73kh"]
+[ext_resource type="PackedScene" uid="uid://c7i61mgv4je1u" path="res://vanthinh/MenuCaiDat/volume_slider.tscn" id="8_ayohg"]
+[ext_resource type="Texture2D" uid="uid://cj5ypok2y3hsm" path="res://vanthinh/MenuCaiDat/img/iconLoa.png" id="9_ft3n2"]
+[ext_resource type="AudioStream" uid="uid://do8yh0foq6owy" path="res://vanthinh/MenuCaiDat/AmThanh/Heroes_ Avatar.mp3" id="10_an36f"]
+
+[node name="MenuCaiDat" type="Node2D"]
+script = ExtResource("1_i4mox")
+
+[node name="BackgroundMenusetting" type="Sprite2D" parent="."]
+position = Vector2(614, 326.5)
+scale = Vector2(1.09535, 1.0451)
+texture = ExtResource("1_faqrh")
+
+[node name="Thietlap" type="Sprite2D" parent="BackgroundMenusetting"]
+position = Vector2(-2.85712, -244.335)
+scale = Vector2(0.663507, 0.554905)
+texture = ExtResource("2_lw874")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BackgroundMenusetting"]
+offset_left = -414.0
+offset_top = -170.0
+offset_right = 414.0
+offset_bottom = 234.0
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundMenusetting/ScrollContainer"]
+custom_minimum_size = Vector2(0, 410)
+layout_mode = 2
+
+[node name="TieuDeAmThanh" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(398.48, 41.0348)
+scale = Vector2(0.402209, 0.356058)
+texture = ExtResource("4_xl4bn")
+
+[node name="IconItemLoa" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(100.858, 94.8874)
+scale = Vector2(0.4, 0.453)
+texture = ExtResource("5_mh1fu")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemLoa"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -235.831
+offset_top = 59.1429
+offset_right = 97.1688
+offset_bottom = 131.143
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Âm Lượng Chính
+"
+
+[node name="IconItemNhac" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(91.7282, 206.839)
+scale = Vector2(0.4, 0.363)
+texture = ExtResource("6_w17b1")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemNhac"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.365
+offset_top = 89.6221
+offset_right = -7.36523
+offset_bottom = 147.622
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "Nhạc
+"
+
+[node name="IconItemAmLuong" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(92.6412, 324.531)
+scale = Vector2(0.471083, 0.431256)
+texture = ExtResource("7_p73kh")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemAmLuong"]
+offset_left = -133.721
+offset_top = 66.5625
+offset_right = 141.279
+offset_bottom = 124.563
+theme_override_font_sizes/font_size = 40
+text = "Âm Lượng SFX
+"
+
+[node name="master" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("8_ayohg")]
+layout_mode = 0
+offset_left = 201.282
+offset_top = 86.2758
+offset_right = 779.282
+offset_bottom = 120.276
+bus_name = "Master"
+
+[node name="music" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("8_ayohg")]
+layout_mode = 0
+offset_left = 201.282
+offset_top = 197.27
+offset_right = 779.282
+offset_bottom = 231.27
+bus_name = "music"
+
+[node name="sfx" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("8_ayohg")]
+layout_mode = 0
+offset_left = 201.282
+offset_top = 306.351
+offset_right = 779.282
+offset_bottom = 340.351
+bus_name = "sfx"
+
+[node name="Button_close" type="Button" parent="BackgroundMenusetting"]
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.096
+anchor_right = 0.12
+anchor_bottom = 0.096
+offset_left = 257.8
+offset_top = -286.96
+offset_right = 312.8
+offset_bottom = -231.96
+
+[node name="CloseButton" type="Sprite2D" parent="BackgroundMenusetting/Button_close"]
+position = Vector2(26.0511, 27.3776)
+scale = Vector2(0.466667, 0.448759)
+texture = ExtResource("3_meckq")
+
+[node name="IconLoa" type="Sprite2D" parent="."]
+position = Vector2(109, 111)
+scale = Vector2(0.828313, 0.733516)
+texture = ExtResource("9_ft3n2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_an36f")
+autoplay = true
+
+[connection signal="pressed" from="BackgroundMenusetting/Button_close" to="." method="_on_button_close_pressed"]
