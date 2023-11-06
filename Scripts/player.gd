@@ -72,7 +72,6 @@ func animation_controller(vel):
 				_player_animation.play("Walk_right_front")
 			else:
 				_player_animation.play("Walk_right_back")
-#			
 		else:
 			if gun_to_mouse_vector.y>0:
 				_player_animation.play("Walk_down")

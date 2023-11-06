@@ -15,8 +15,11 @@ class_name Weapon
 @export_category("Gun Statistics")
 @export var capacity:int
 @export var magazine:int
-@export var fire_rate:int
+@export var fire_rate:float=3
 @export var damage:int
+
+var lastShoot:float=0
+var firetime:float=1/fire_rate
 
 
 func _ready():
@@ -25,14 +28,9 @@ func _ready():
 	gun_handle.global_position=hand.global_position
 
 func _process(delta):
-	weaponAnimationController()
 	gun_to_mouse_vector=weaponRotation()
 	shoot(gun_to_mouse_vector)
 	
-func weaponAnimationController():
-	if(Input.is_action_just_pressed("Shoot")):
-		shoot_animation.stop()
-		shoot_animation.play("Shoot")
 		
 func weaponRotation():
 	var mouse_position : Vector2=get_global_mouse_position()
@@ -55,11 +53,15 @@ func weaponRotation():
 	return mouse_direction
 #	
 func shoot(mouse_direction):
-	if(Input.is_action_just_pressed("Shoot")):
+	var timeLapsed= Time.get_ticks_msec()/1000
+	if Input.is_action_just_pressed("Shoot") and timeLapsed>lastShoot +firetime:
+		shoot_animation.stop()
+		shoot_animation.play("Shoot")
 		var bullet_instance=bullet.instantiate()
 		get_tree().root.add_child(bullet_instance)
 		bullet_instance.direction=gun_to_mouse_vector
 		bullet_instance.position=shoot_point.global_position
+		lastShoot=timeLapsed
 #		bullet_instance.apply_impulse(Vector2(),Vector2(bullet_instance.speed,0).rotated(bullet_instance.rotation))
 	
 		

@@ -246,10 +246,11 @@ position_smoothing_speed = 1.0
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("3_7h23u")
 
-[node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+[node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "sprite")]
 collision_mask = 92
 script = ExtResource("4_2anvp")
 health_component = NodePath("../StatisticsComponent")
+sprite = NodePath("../AnimationController")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 position = Vector2(-0.5, 1.5)

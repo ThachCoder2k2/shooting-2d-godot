@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name DetectArea
 @export var player_chase=false
 @export var player:CharacterBody2D
 
@@ -16,7 +16,7 @@ func _on_body_entered(body):
 
 func _on_body_exited(body):
 	player_chase=false
-
+	player=null
 
 
 func _on_area_entered(area):
