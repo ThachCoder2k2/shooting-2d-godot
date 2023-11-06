@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://cewtnmdi87p24"]
+
+[ext_resource type="Script" path="res://VanThinh/MenuCaiDat/menu_setting.gd" id="1_6lrq6"]
+[ext_resource type="Texture2D" uid="uid://b57jxnci7ibls" path="res://VanThinh/MenuCaiDat/img/background_menusetting.png" id="1_l4k8d"]
+[ext_resource type="Texture2D" uid="uid://ywomwysiqmq7" path="res://VanThinh/MenuCaiDat/img/closeButton.png" id="2_yd0xh"]
+[ext_resource type="Texture2D" uid="uid://dbp5h8u31t51h" path="res://VanThinh/MenuCaiDat/img/thietlap.png" id="3_x6ifr"]
+[ext_resource type="Texture2D" uid="uid://cojm16gnyx0b3" path="res://VanThinh/MenuCaiDat/img/iconLoa.png" id="4_kbm8j"]
+[ext_resource type="Texture2D" uid="uid://mhy78qvyexod" path="res://VanThinh/MenuCaiDat/img/tieuDeAmThanh.png" id="5_cl8sc"]
+[ext_resource type="PackedScene" uid="uid://d2dfxaktkmd47" path="res://VanThinh/MenuCaiDat/volume_slider.tscn" id="6_oiyxr"]
+[ext_resource type="Texture2D" uid="uid://dc6jfw11qokog" path="res://VanThinh/MenuCaiDat/img/iconItemAmLuong.png" id="6_sxf55"]
+[ext_resource type="Texture2D" uid="uid://buvofg5gkhxgi" path="res://VanThinh/MenuCaiDat/img/iconItemLoa.png" id="7_0lu43"]
+[ext_resource type="Texture2D" uid="uid://c4ghnumpw8k56" path="res://VanThinh/MenuCaiDat/img/iconItemNhac.png" id="8_w4la2"]
+[ext_resource type="AudioStream" uid="uid://dsj8bor1pj2ob" path="res://VanThinh/MenuCaiDat/AmThanh/Heroes_ Avatar.mp3" id="10_52tt6"]
+
+[node name="menuSetting" type="Node2D"]
+script = ExtResource("1_6lrq6")
+
+[node name="BackgroundMenusetting" type="Sprite2D" parent="."]
+position = Vector2(628, 320.5)
+scale = Vector2(1.08372, 1.06078)
+texture = ExtResource("1_l4k8d")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BackgroundMenusetting"]
+offset_left = -415.0
+offset_top = -173.0
+offset_right = 421.0
+offset_bottom = 238.0
+
+[node name="ColorRect" type="ColorRect" parent="BackgroundMenusetting/ScrollContainer"]
+custom_minimum_size = Vector2(0, 410)
+layout_mode = 2
+
+[node name="TieuDeAmThanh" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(428.841, 43.3789)
+scale = Vector2(0.333931, 0.403668)
+texture = ExtResource("5_cl8sc")
+
+[node name="IconItemAmLuong" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(118.798, 328.074)
+scale = Vector2(0.435536, 0.431517)
+texture = ExtResource("6_sxf55")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemAmLuong"]
+offset_left = -146.186
+offset_top = 96.1235
+offset_right = 128.814
+offset_bottom = 154.124
+theme_override_font_sizes/font_size = 40
+text = "Âm Lượng SFX
+"
+
+[node name="IconItemNhac" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(121.567, 215.893)
+scale = Vector2(0.461373, 0.385649)
+texture = ExtResource("8_w4la2")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemNhac"]
+offset_left = -52.0
+offset_top = 105.111
+offset_right = 47.0
+offset_bottom = 163.111
+theme_override_font_sizes/font_size = 40
+text = "Nhạc
+"
+
+[node name="IconItemLoa" type="Sprite2D" parent="BackgroundMenusetting/ScrollContainer/ColorRect"]
+position = Vector2(126.18, 95.2273)
+scale = Vector2(0.371035, 0.407653)
+texture = ExtResource("7_0lu43")
+
+[node name="Label" type="Label" parent="BackgroundMenusetting/ScrollContainer/ColorRect/IconItemLoa"]
+offset_left = -162.274
+offset_top = 101.75
+offset_right = 155.726
+offset_bottom = 159.75
+theme_override_font_sizes/font_size = 40
+text = "Âm Lượng Chính
+"
+
+[node name="master" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("6_oiyxr")]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 85.8
+offset_right = 784.0
+offset_bottom = 119.8
+bus_name = "Master"
+
+[node name="music" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("6_oiyxr")]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 202.695
+offset_right = 784.0
+offset_bottom = 236.695
+bus_name = "music"
+
+[node name="sfx" parent="BackgroundMenusetting/ScrollContainer/ColorRect" instance=ExtResource("6_oiyxr")]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 317.704
+offset_right = 784.0
+offset_bottom = 351.704
+bus_name = "sfx"
+
+[node name="button_close" type="Button" parent="BackgroundMenusetting"]
+offset_left = 358.0
+offset_top = -237.0
+offset_right = 414.0
+offset_bottom = -182.0
+
+[node name="CloseButton" type="Sprite2D" parent="BackgroundMenusetting/button_close"]
+position = Vector2(26.7855, 24.4214)
+scale = Vector2(0.500372, 0.481203)
+texture = ExtResource("2_yd0xh")
+
+[node name="Thietlap" type="Sprite2D" parent="BackgroundMenusetting"]
+position = Vector2(12.9185, -238.974)
+scale = Vector2(0.596943, 0.603795)
+texture = ExtResource("3_x6ifr")
+
+[node name="IconLoa" type="Sprite2D" parent="."]
+position = Vector2(128, 103)
+scale = Vector2(0.837349, 0.730769)
+texture = ExtResource("4_kbm8j")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_52tt6")
+autoplay = true
+
+[connection signal="pressed" from="BackgroundMenusetting/button_close" to="." method="_on_button_close_pressed"]

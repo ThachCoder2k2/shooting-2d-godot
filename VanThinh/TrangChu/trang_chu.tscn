@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyndaxvdi63oy"]
+
+[ext_resource type="Texture2D" uid="uid://cf86mkfq2xa3h" path="res://VanThinh/TrangChu/img/backgroundTrangchu.png" id="1_0501v"]
+[ext_resource type="Script" path="res://VanThinh/TrangChu/trang_chu.gd" id="1_irksb"]
+[ext_resource type="Texture2D" uid="uid://dlogj11uquuk3" path="res://VanThinh/TrangChu/img/button_gamemoi.jpg" id="2_htc7r"]
+[ext_resource type="Texture2D" uid="uid://c4hgy1rlg3fjv" path="res://VanThinh/TrangChu/img/facebook.png" id="3_y4ipf"]
+[ext_resource type="Texture2D" uid="uid://hrengocx211v" path="res://VanThinh/TrangChu/img/QuanLyDuLieu.png" id="4_ky2xf"]
+[ext_resource type="Texture2D" uid="uid://0eubpcrgn70w" path="res://VanThinh/TrangChu/img/setting.png" id="5_nfkpa"]
+[ext_resource type="PackedScene" uid="uid://cewtnmdi87p24" path="res://VanThinh/MenuCaiDat/menu_setting.tscn" id="7_3lpse"]
+
+[node name="TrangChu" type="Node2D"]
+script = ExtResource("1_irksb")
+
+[node name="BackgroundTrangchu" type="Sprite2D" parent="."]
+position = Vector2(573.5, 322.5)
+scale = Vector2(0.797917, 0.884722)
+texture = ExtResource("1_0501v")
+
+[node name="Facebook" type="Sprite2D" parent="."]
+position = Vector2(1076, 566.5)
+scale = Vector2(0.596155, 0.59)
+texture = ExtResource("3_y4ipf")
+
+[node name="QuanLyDuLieu" type="Sprite2D" parent="."]
+position = Vector2(86.125, 474)
+scale = Vector2(0.664286, 0.761905)
+texture = ExtResource("4_ky2xf")
+
+[node name="button_caidat" type="Button" parent="."]
+offset_left = 45.0
+offset_top = 529.0
+offset_right = 121.0
+offset_bottom = 599.0
+
+[node name="Setting" type="Sprite2D" parent="button_caidat"]
+position = Vector2(38, 37.0001)
+scale = Vector2(0.0516917, 0.0592396)
+texture = ExtResource("5_nfkpa")
+
+[node name="button_playGame" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 526.0
+offset_right = 723.0
+offset_bottom = 601.0
+
+[node name="ButtonGamemoi" type="Sprite2D" parent="button_playGame"]
+position = Vector2(138.071, 38.1936)
+scale = Vector2(0.428793, 0.39785)
+texture = ExtResource("2_htc7r")
+
+[node name="menuSetting" parent="." instance=ExtResource("7_3lpse")]
+
+[connection signal="pressed" from="button_caidat" to="." method="_on_button_caidat_pressed"]
