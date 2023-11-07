@@ -1,4 +1,6 @@
 extends Sprite2D
+class_name AnimationController
+
 
 @export var detectArea:DetectArea
 @export var animator:AnimationPlayer

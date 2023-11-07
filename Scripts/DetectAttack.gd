@@ -1,6 +1,7 @@
 extends Area2D
-class_name DetectArea
-@export var player_chase=false
+class_name DetectAttack
+
+@export var player_in_attack_range=false
 @export var player:CharacterBody2D
 
 func _process(delta):
@@ -8,17 +9,14 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
+	print(body)
 	if body.name=="Player":
 		player=body
-		player_chase=true
+		player_in_attack_range=true
 
 
 
 func _on_body_exited(body):
-	player_chase=false
+	player_in_attack_range=false
 	player=null
 
-
-func _on_area_entered(area):
-#	print(area)
-	pass

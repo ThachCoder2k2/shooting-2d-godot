@@ -9,6 +9,7 @@ class_name Bullet
 @export var direction : Vector2
 @export var damage=40
 
+
 #While flying controller
 var check_flying=false
 var timer = Timer.new()

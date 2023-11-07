@@ -1,0 +1,140 @@
+[gd_scene load_steps=18 format=3 uid="uid://guxy4at2x2vy"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_86cs5"]
+[ext_resource type="Script" path="res://Scripts/HitComponent.gd" id="1_a7cm7"]
+[ext_resource type="Script" path="res://Scripts/StatisticsComponent.gd" id="3_a2468"]
+[ext_resource type="Script" path="res://Scripts/DetectPlayer.gd" id="3_sx6ko"]
+[ext_resource type="Texture2D" uid="uid://bv31afx1roolb" path="res://Assets/enemy_fly.png" id="4_uvkoi"]
+[ext_resource type="Script" path="res://Scripts/AnimationController.gd" id="5_gugr5"]
+[ext_resource type="Script" path="res://Scripts/AttackComponent.gd" id="5_rv7vs"]
+[ext_resource type="Script" path="res://Scripts/EnemyShoot.gd" id="8_4mq6d"]
+[ext_resource type="Script" path="res://Scripts/DetectAttack.gd" id="9_tavhf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axxjj"]
+radius = 178.07
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwdj"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7sre"]
+size = Vector2(13, 16)
+
+[sub_resource type="Animation" id="Animation_eba7p"]
+resource_name = "Idle"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_2a3ap"]
+resource_name = "Moving"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_34g7w"]
+resource_name = "Attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f8mqd"]
+_data = {
+"Attack": SubResource("Animation_34g7w"),
+"Idle": SubResource("Animation_eba7p"),
+"Moving": SubResource("Animation_2a3ap")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4me08"]
+radius = 50.04
+
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detectArea", "attack")]
+script = ExtResource("1_86cs5")
+statistics = NodePath("StatisticsComponent")
+detectArea = NodePath("DetectArea")
+attack = NodePath("AttackComponent")
+
+[node name="StatisticsComponent" type="Node2D" parent="."]
+script = ExtResource("3_a2468")
+enemy_type = 1
+
+[node name="DetectArea" type="Area2D" parent="."]
+collision_layer = 64
+script = ExtResource("3_sx6ko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectArea"]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_axxjj")
+
+[node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "sprite")]
+collision_layer = 64
+collision_mask = 33
+script = ExtResource("1_a7cm7")
+health_component = NodePath("../StatisticsComponent")
+sprite = NodePath("../AnimationController")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(-1, 5)
+shape = SubResource("CapsuleShape2D_wbwdj")
+
+[node name="AttackComponent" type="Area2D" parent="." node_paths=PackedStringArray("statistics")]
+collision_layer = 64
+collision_mask = 33
+script = ExtResource("5_rv7vs")
+statistics = NodePath("../StatisticsComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
+position = Vector2(-0.5, 5)
+shape = SubResource("RectangleShape2D_s7sre")
+
+[node name="AnimationController" type="Sprite2D" parent="." node_paths=PackedStringArray("detectArea", "animator")]
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("4_uvkoi")
+hframes = 6
+frame = 2
+script = ExtResource("5_gugr5")
+detectArea = NodePath("../DetectArea")
+animator = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationController"]
+libraries = {
+"": SubResource("AnimationLibrary_f8mqd")
+}
+
+[node name="Shoot" type="Node2D" parent="." node_paths=PackedStringArray("detect_area", "detect_attack")]
+position = Vector2(0, 6)
+script = ExtResource("8_4mq6d")
+detect_area = NodePath("../DetectArea")
+detect_attack = NodePath("../DetectAttack")
+
+[node name="DetectAttack" type="Area2D" parent="."]
+collision_layer = 64
+script = ExtResource("9_tavhf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectAttack"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_4me08")
+
+[connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
+[connection signal="body_entered" from="DetectAttack" to="DetectAttack" method="_on_body_entered"]
+[connection signal="body_exited" from="DetectAttack" to="DetectAttack" method="_on_body_exited"]

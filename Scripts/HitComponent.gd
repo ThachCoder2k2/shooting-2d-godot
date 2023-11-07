@@ -15,11 +15,7 @@ func damage(damage):
 		get_parent().queue_free()
 
 func damage_effect():
-	if get_parent().name=="Enemy":
-		sprite.modulate=Color.RED
-		await get_tree().create_timer(0.1).timeout
-		sprite.modulate=Color.WHITE
-	else:
+	if get_parent().name=="Player":
 		sprite.modulate=Color(2,2,2)
 		await get_tree().create_timer(0.1).timeout
 		sprite.set_visible(true)
@@ -29,3 +25,7 @@ func damage_effect():
 		sprite.set_visible(true)
 		sprite.modulate=Color.WHITE
 #		sprite.modulate=Color.WHITE
+	else:
+		sprite.modulate=Color.RED
+		await get_tree().create_timer(0.1).timeout
+		sprite.modulate=Color.WHITE
