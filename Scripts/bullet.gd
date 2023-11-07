@@ -8,6 +8,7 @@ class_name Bullet
 @export var speed =200
 @export var direction : Vector2
 @export var damage=40
+@export var player_or_enemy=0
 
 
 #While flying controller
@@ -43,8 +44,11 @@ func OnDestroy():
 
 func _on_area_entered(area):
 	#Check if that was a player then nothing happens
-	if area.name == "Player":
+	if area.name == "Player" && player_or_enemy==0:
 		return
+	if area.name == "Enemy" && player_or_enemy==1:
+		return
+	print(area)
 	#if it lands on a hitcomponent then it gonna get being damaged
 	if area is HitComponent:
 		check_flying=false

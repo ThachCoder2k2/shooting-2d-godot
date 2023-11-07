@@ -9,7 +9,6 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	print(body)
 	if body.name=="Player":
 		player=body
 		player_in_attack_range=true

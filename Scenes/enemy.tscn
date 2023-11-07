@@ -12,7 +12,7 @@
 size = Vector2(7, 7)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6deel"]
-radius = 149.0
+radius = 125.004
 
 [sub_resource type="Animation" id="Animation_nnx4l"]
 resource_name = "Idle"
@@ -39,7 +39,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(0, -0.25)]
 }
 tracks/2/type = "value"
@@ -51,14 +51,14 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
+"update": 1,
 "values": [Vector2(7, 19)]
 }
 
 [sub_resource type="Animation" id="Animation_gh76t"]
 resource_name = "Moving"
 length = 0.5
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -136,12 +136,12 @@ size = Vector2(23, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npolc"]
 size = Vector2(19, 8)
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detectArea", "attack", "navAgent")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "attack", "navAgent")]
 collision_layer = 64
 collision_mask = 97
 script = ExtResource("1_jd4y1")
 statistics = NodePath("StatisticsComponent")
-detectArea = NodePath("DetectArea")
+detect_area = NodePath("DetectArea")
 attack = NodePath("AttackComponent")
 navAgent = NodePath("NavigationAgent2D")
 
