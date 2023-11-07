@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://guxy4at2x2vy"]
+[gd_scene load_steps=20 format=3 uid="uid://byllq5prkefip"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_86cs5"]
 [ext_resource type="Script" path="res://Scripts/HitComponent.gd" id="1_a7cm7"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" path="res://Scripts/AttackComponent.gd" id="5_rv7vs"]
 [ext_resource type="Script" path="res://Scripts/EnemyShoot.gd" id="8_4mq6d"]
 [ext_resource type="Script" path="res://Scripts/DetectAttack.gd" id="9_tavhf"]
-[ext_resource type="Script" path="res://Scenes/CloseRangedAttack.gd" id="10_7s3da"]
+[ext_resource type="Script" path="res://Scripts/CloseRangedAttack.gd" id="10_ydsbu"]
+[ext_resource type="Script" path="res://Scripts/StateController.gd" id="11_egxuv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_axxjj"]
-radius = 96.0052
+radius = 136.015
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4me08"]
-radius = 55.0091
+radius = 82.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwdj"]
 radius = 4.0
@@ -26,6 +27,19 @@ size = Vector2(13, 16)
 
 [sub_resource type="Animation" id="Animation_34g7w"]
 resource_name = "Attack"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
 
 [sub_resource type="Animation" id="Animation_eba7p"]
 resource_name = "Idle"
@@ -68,16 +82,20 @@ _data = {
 "Moving": SubResource("Animation_2a3ap")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "detect_attack", "attack", "enemyShoot")]
+[node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "detect_attack", "attack", "enemyShoot", "close_range_attack", "state", "timer")]
 script = ExtResource("1_86cs5")
 statistics = NodePath("StatisticsComponent")
 detect_area = NodePath("DetectArea")
 detect_attack = NodePath("DetectAttack")
 attack = NodePath("AttackComponent")
 enemyShoot = NodePath("Shoot")
+close_range_attack = NodePath("CloseRangedAttack")
+state = NodePath("StateController")
+timer = NodePath("CloseRangedAttack/Timer")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("3_a2468")
+atk_damage = 20
 enemy_type = 1
 
 [node name="DetectArea" type="Area2D" parent="."]
@@ -117,14 +135,16 @@ statistics = NodePath("../StatisticsComponent")
 position = Vector2(-0.5, 5)
 shape = SubResource("RectangleShape2D_s7sre")
 
-[node name="AnimationController" type="Sprite2D" parent="." node_paths=PackedStringArray("detectArea", "animator")]
+[node name="AnimationController" type="Sprite2D" parent="." node_paths=PackedStringArray("detectArea", "animator", "state")]
 texture_filter = 1
 position = Vector2(0, 5)
 texture = ExtResource("4_uvkoi")
 hframes = 6
+frame = 4
 script = ExtResource("5_gugr5")
 detectArea = NodePath("../DetectArea")
 animator = NodePath("AnimationPlayer")
+state = NodePath("../StateController")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationController"]
 libraries = {
@@ -137,11 +157,20 @@ script = ExtResource("8_4mq6d")
 detect_area = NodePath("../DetectArea")
 detect_attack = NodePath("../DetectAttack")
 
-[node name="CloseRangedAttack" type="Node2D" parent="." node_paths=PackedStringArray("statisticsComponent")]
-script = ExtResource("10_7s3da")
+[node name="CloseRangedAttack" type="Node2D" parent="." node_paths=PackedStringArray("statisticsComponent", "detect_attack", "state")]
+script = ExtResource("10_ydsbu")
 statisticsComponent = NodePath("../StatisticsComponent")
+detect_attack = NodePath("../DetectAttack")
+state = NodePath("../StateController")
+
+[node name="Timer" type="Timer" parent="CloseRangedAttack"]
+one_shot = true
+
+[node name="StateController" type="Node2D" parent="."]
+script = ExtResource("11_egxuv")
 
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectArea" to="DetectArea" method="_on_body_exited"]
 [connection signal="body_entered" from="DetectAttack" to="DetectAttack" method="_on_body_entered"]
 [connection signal="body_exited" from="DetectAttack" to="DetectAttack" method="_on_body_exited"]
+[connection signal="area_entered" from="AttackComponent" to="AttackComponent" method="_on_area_entered"]

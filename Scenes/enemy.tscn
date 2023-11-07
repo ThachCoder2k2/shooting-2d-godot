@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bds6gnnhvejve"]
+[gd_scene load_steps=17 format=3 uid="uid://bds6gnnhvejve"]
 
 [ext_resource type="Script" path="res://Scripts/StatisticsComponent.gd" id="1_3ldj0"]
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_jd4y1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/DetectPlayer.gd" id="3_oe71v"]
 [ext_resource type="Script" path="res://Scripts/HitComponent.gd" id="4_27rfc"]
 [ext_resource type="Script" path="res://Scripts/AttackComponent.gd" id="7_cwr3v"]
+[ext_resource type="Script" path="res://Scripts/StateController.gd" id="8_ke4d8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vljgb"]
 size = Vector2(7, 7)
@@ -136,7 +137,7 @@ size = Vector2(23, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npolc"]
 size = Vector2(19, 8)
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "attack", "navAgent")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "attack", "navAgent", "state", "timer")]
 collision_layer = 64
 collision_mask = 97
 script = ExtResource("1_jd4y1")
@@ -144,6 +145,8 @@ statistics = NodePath("StatisticsComponent")
 detect_area = NodePath("DetectArea")
 attack = NodePath("AttackComponent")
 navAgent = NodePath("NavigationAgent2D")
+state = NodePath("StateController")
+timer = NodePath("Timer")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("1_3ldj0")
@@ -164,7 +167,7 @@ script = ExtResource("3_oe71v")
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_6deel")
 
-[node name="AnimationController" type="Sprite2D" parent="." node_paths=PackedStringArray("detectArea", "animator")]
+[node name="AnimationController" type="Sprite2D" parent="." node_paths=PackedStringArray("detectArea", "animator", "state")]
 texture_filter = 1
 texture = ExtResource("2_ml7su")
 hframes = 8
@@ -172,6 +175,7 @@ vframes = 2
 script = ExtResource("3_01am0")
 detectArea = NodePath("../DetectArea")
 animator = NodePath("AnimationPlayer")
+state = NodePath("../StateController")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationController"]
 libraries = {
@@ -202,6 +206,11 @@ shape = SubResource("RectangleShape2D_npolc")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 22.37
+
+[node name="StateController" type="Node2D" parent="."]
+script = ExtResource("8_ke4d8")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="DetectArea" to="DetectArea" method="_on_area_entered"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]
