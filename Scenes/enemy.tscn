@@ -137,7 +137,7 @@ size = Vector2(23, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npolc"]
 size = Vector2(19, 8)
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "attack", "navAgent", "state", "timer")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("statistics", "detect_area", "attack", "navAgent", "state", "timer", "timer_state")]
 collision_layer = 64
 collision_mask = 97
 script = ExtResource("1_jd4y1")
@@ -146,7 +146,8 @@ detect_area = NodePath("DetectArea")
 attack = NodePath("AttackComponent")
 navAgent = NodePath("NavigationAgent2D")
 state = NodePath("StateController")
-timer = NodePath("Timer")
+timer = NodePath("TimerAttack")
+timer_state = NodePath("TimerState")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("1_3ldj0")
@@ -210,7 +211,12 @@ radius = 22.37
 [node name="StateController" type="Node2D" parent="."]
 script = ExtResource("8_ke4d8")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="TimerAttack" type="Timer" parent="."]
+one_shot = true
+
+[node name="TimerState" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
 
 [connection signal="area_entered" from="DetectArea" to="DetectArea" method="_on_area_entered"]
 [connection signal="body_entered" from="DetectArea" to="DetectArea" method="_on_body_entered"]

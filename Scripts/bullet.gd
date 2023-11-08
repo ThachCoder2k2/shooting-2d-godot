@@ -52,6 +52,6 @@ func _on_area_entered(area):
 	#if it lands on a hitcomponent then it gonna get being damaged
 	if area is HitComponent:
 		check_flying=false
-		area.damage(damage)
+		area.GetHit(damage)
 		OnDestroy()
 	pass

@@ -7,6 +7,9 @@ class_name HitComponent
 func _ready():
 	pass # Replace with function body.
 
+func GetHit(damage):
+	damage(damage)
+
 func damage(damage):
 	damage_effect()
 	health_component.health-=damage
@@ -29,3 +32,8 @@ func damage_effect():
 		sprite.modulate=Color.RED
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate=Color.WHITE
+
+
+func _on_area_entered(area):
+	if area.name == "Bullet" && health_component.enemy_type>1:
+		return
