@@ -10,13 +10,13 @@ var phong_thu = MAX_PHONG_THU
 
 
 func _ready():
-	mau = 60
+	#mau = 60
 	set_mau_label()
 	set_mau_bar()
-	mp=400
+	#mp=400
 	set_mp_label()
 	set_mp_bar()
-	phong_thu = 120
+	#phong_thu = 120
 	set_phong_thu_label()
 	set_phong_thu_bar()
 	

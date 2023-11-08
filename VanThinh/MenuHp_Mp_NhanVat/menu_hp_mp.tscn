@@ -34,17 +34,22 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="MenuHp_MP" type="Control"]
+texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = 21.0
+offset_right = -989.0
+offset_bottom = -539.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_25w6v")
 
 [node name="BackgroudBang" type="Sprite2D" parent="."]
-position = Vector2(143.583, 86)
-scale = Vector2(0.527, 0.524)
+position = Vector2(103.646, 64.176)
+scale = Vector2(0.379087, 0.380421)
 texture = ExtResource("1_7o5ie")
 
 [node name="hp" type="ProgressBar" parent="BackgroudBang"]
@@ -70,6 +75,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="iconhp" type="Sprite2D" parent="BackgroudBang/hp"]
+texture_filter = 1
 position = Vector2(-32.926, 31.282)
 scale = Vector2(7.618, 6.765)
 texture = ExtResource("2_jju80")
@@ -98,6 +104,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="iconMP" type="Sprite2D" parent="BackgroudBang/mana"]
+texture_filter = 1
 position = Vector2(-36.96, 19.826)
 scale = Vector2(7.662, 6.804)
 texture = ExtResource("3_j1y5h")
@@ -126,6 +133,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="iconPhongThu" type="Sprite2D" parent="BackgroudBang/phongthu"]
+texture_filter = 1
 position = Vector2(-33.536, 30.327)
 scale = Vector2(0.887, 0.976)
 texture = ExtResource("4_oirtw")

@@ -1,17 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuhf2aekbiftb"]
+[gd_scene load_steps=12 format=3 uid="uid://cuhf2aekbiftb"]
 
+[ext_resource type="Script" path="res://VanThinh/MenuTamDung/menu_tam_dung.gd" id="1_jifvf"]
 [ext_resource type="Texture2D" uid="uid://b0ctcovf8qf2f" path="res://VanThinh/MenuTamDung/img/bang_menu_tamdung.png" id="1_xx676"]
 [ext_resource type="Texture2D" uid="uid://c2oox414hrlon" path="res://VanThinh/MenuTamDung/img/nhanvat.png" id="2_n0w2g"]
 [ext_resource type="Texture2D" uid="uid://b1bxhbkoygw1g" path="res://VanThinh/MenuTamDung/img/icon1.png" id="3_pxma1"]
 [ext_resource type="Texture2D" uid="uid://rt04sq1elryu" path="res://VanThinh/MenuTamDung/img/icon2.png" id="4_e7ld7"]
 [ext_resource type="Texture2D" uid="uid://dq2lufk56sn65" path="res://VanThinh/MenuTamDung/img/tieude_tamdung.png" id="5_3epvx"]
-[ext_resource type="Texture2D" uid="uid://cax4luly3eeue" path="res://VanThinh/MenuTamDung/img/tamdung.png" id="6_px31c"]
 [ext_resource type="Texture2D" uid="uid://dqkkramyrrqh1" path="res://VanThinh/MenuTamDung/img/home.png" id="7_cqxrg"]
 [ext_resource type="Texture2D" uid="uid://cur48ri6u1sgv" path="res://VanThinh/MenuTamDung/img/play.png" id="8_vcscf"]
 [ext_resource type="Texture2D" uid="uid://qrkfkonhyn80" path="res://VanThinh/MenuTamDung/img/caiDat.png" id="9_hagu0"]
 [ext_resource type="Texture2D" uid="uid://1kbgj6qa7frb" path="res://VanThinh/MenuTamDung/img/add.png" id="10_27rt5"]
+[ext_resource type="AudioStream" uid="uid://dr0mf0646dlbp" path="res://VanThinh/MenuCaiDat/AmThanh/button-124476.mp3" id="11_nk27j"]
 
 [node name="menu_tam_dung" type="Node2D"]
+script = ExtResource("1_jifvf")
 
 [node name="BangMenuTamdung" type="Sprite2D" parent="."]
 position = Vector2(404, 171)
@@ -40,11 +42,6 @@ texture = ExtResource("4_e7ld7")
 position = Vector2(4.5, -87.023)
 scale = Vector2(0.759, 0.316)
 texture = ExtResource("5_3epvx")
-
-[node name="Tamdung" type="Sprite2D" parent="BangMenuTamdung"]
-position = Vector2(-217, 233.01)
-scale = Vector2(1, 0.693481)
-texture = ExtResource("6_px31c")
 
 [node name="button_home" type="Button" parent="BangMenuTamdung"]
 offset_left = -383.0
@@ -99,6 +96,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 75.0
 offset_top = 1.0
 offset_right = 149.0
@@ -107,6 +105,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 149.0
 offset_top = 1.0
 offset_right = 223.0
@@ -115,6 +114,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect4" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 223.0
 offset_top = 1.0
 offset_right = 297.0
@@ -123,6 +123,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect5" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 297.0
 offset_top = 1.0
 offset_right = 371.0
@@ -131,6 +132,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect6" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 371.0
 offset_top = 1.0
 offset_right = 445.0
@@ -139,6 +141,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect7" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 445.0
 offset_top = 1.0
 offset_right = 519.0
@@ -147,6 +150,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect8" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 519.0
 offset_top = 1.0
 offset_right = 593.0
@@ -155,6 +159,7 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect9" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 593.0
 offset_top = 1.0
 offset_right = 667.0
@@ -163,9 +168,25 @@ texture = ExtResource("10_27rt5")
 expand_mode = 1
 
 [node name="TextureRect10" type="TextureRect" parent="BangMenuTamdung/ScrollContainer/ColorRect"]
+layout_mode = 0
 offset_left = 668.0
 offset_top = 1.0
 offset_right = 742.0
 offset_bottom = 58.0
 texture = ExtResource("10_27rt5")
 expand_mode = 1
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_nk27j")
+pitch_scale = 1.13
+bus = &"sfx"
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.512
+one_shot = true
+
+[connection signal="button_up" from="BangMenuTamdung/button_home" to="." method="_on_button_home_button_up"]
+[connection signal="button_up" from="BangMenuTamdung/button_play" to="." method="_on_button_play_button_up"]
+[connection signal="button_up" from="BangMenuTamdung/button_caidat" to="." method="_on_button_caidat_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

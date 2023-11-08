@@ -14,6 +14,10 @@ config/name="Shooting 2d"
 run/main_scene="res://Scenes/player.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout="res://VanThinh/MenuCaiDat/AmThanh/default_bus_layout.tres"
+
 [dotnet]
 
 project/assembly_name="Shooting 2d"
@@ -60,3 +64,4 @@ Shoot={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0

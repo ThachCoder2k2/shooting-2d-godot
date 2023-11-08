@@ -228,7 +228,7 @@ texture_filter = 1
 texture = ExtResource("2_y8cu2")
 hframes = 6
 vframes = 11
-frame = 14
+frame = 15
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="AnimationController"]
 libraries = {
