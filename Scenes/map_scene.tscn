@@ -1,9 +1,10 @@
-[gd_scene load_steps=69 format=3 uid="uid://d177saece0a5i"]
+[gd_scene load_steps=70 format=3 uid="uid://d177saece0a5i"]
 
 [ext_resource type="PackedScene" uid="uid://dinttfmukpnyp" path="res://Scenes/player.tscn" id="2_fvj21"]
 [ext_resource type="Texture2D" uid="uid://daaxbeavu5xir" path="res://Assets/Water_block.png" id="2_rjtfq"]
+[ext_resource type="PackedScene" uid="uid://byllq5prkefip" path="res://Scenes/enemy_fly.tscn" id="4_b704l"]
 [ext_resource type="Texture2D" uid="uid://48gfg624tft4" path="res://Assets/tiles_packed.png" id="4_wl40w"]
-[ext_resource type="PackedScene" uid="uid://dckge5xuwtvjf" path="res://Scenes/enemy_bear.tscn" id="4_ynr50"]
+[ext_resource type="PackedScene" uid="uid://bds6gnnhvejve" path="res://Scenes/enemy.tscn" id="5_drlbr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rv3d3"]
 vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -936,5 +937,8 @@ layer_5/tile_data = PackedInt32Array(524277, 4, 0, 458741, 4, 0, 393205, 4, 0, 3
 
 [node name="Player" parent="." instance=ExtResource("2_fvj21")]
 
-[node name="Enemy" parent="." instance=ExtResource("4_ynr50")]
-position = Vector2(148, -24)
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_b704l")]
+position = Vector2(169, -34)
+
+[node name="Enemy" parent="." instance=ExtResource("5_drlbr")]
+position = Vector2(169, -34)

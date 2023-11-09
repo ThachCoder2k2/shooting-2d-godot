@@ -20,8 +20,8 @@ func play_loop():
 			animator.play("Idle")
 		state.State.MOVING:
 			animator.play("Moving")
-#		state.State.ATTACKING:
-#			animator.play("Attack")
+		state.State.ATTACKING:
+			animator.play("Attack")
 #		state.State.SLEEPING:
 #			animator.play_backwards("WakeUp")
 
