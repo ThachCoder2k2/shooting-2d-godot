@@ -33202,9 +33202,11 @@ scale = Vector2(0.477272, 0.572687)
 texture = ExtResource("8_2h8bd")
 
 [node name="menu_tam_dung" parent="CanvasLayer" instance=ExtResource("9_bvdyo")]
+visible = false
 position = Vector2(185, 127)
 
 [node name="menuSetting" parent="CanvasLayer" instance=ExtResource("10_n6n02")]
+visible = false
 
 [node name="sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_evnv5")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddwkf2677uqep"]
+
+[ext_resource type="Texture2D" uid="uid://dnjx7qa0wi2bm" path="res://map/object_box/hom_go.png" id="1_41qlt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ebuo"]
+size = Vector2(29, 32)
+
+[node name="hom_go" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_5ebuo")
+
+[node name="HomGo" type="Sprite2D" parent="."]
+position = Vector2(-3.27826e-07, 1)
+scale = Vector2(0.103896, 0.112583)
+texture = ExtResource("1_41qlt")

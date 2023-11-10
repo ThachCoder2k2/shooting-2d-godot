@@ -5,6 +5,7 @@ var parentSceneRoot
 var StreamMusic
 func _ready():
 	StreamMusic = $music
+	
 	parentSceneRoot = get_tree().get_current_scene()
 	
 	

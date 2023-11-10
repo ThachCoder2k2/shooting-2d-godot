@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dd420od64yr3y"]
+
+[ext_resource type="Texture2D" uid="uid://crrcygxgdism6" path="res://map/object_box/hop_go.png" id="1_c6mlm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2ssj"]
+size = Vector2(20.5, 24)
+
+[node name="hop_go" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_u2ssj")
+
+[node name="HopGo" type="Sprite2D" parent="."]
+scale = Vector2(0.104, 0.113)
+texture = ExtResource("1_c6mlm")

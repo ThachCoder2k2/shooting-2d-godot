@@ -53,33 +53,6 @@ tracks/2/keys = {
 "values": [Vector2(7, 19), Vector2(6, 19), Vector2(7.07692, 19.5), Vector2(6, 19.4091), Vector2(7, 19.3182), Vector2(7, 19.2273), Vector2(7.5, 19.1364), Vector2(7.16667, 19.0455)]
 }
 
-[sub_resource type="Animation" id="Animation_i6tp7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../HitComponent/CollisionShape2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1.5, 5.75)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../HitComponent/CollisionShape2D:shape:size")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(7, 19)]
-}
-
 [sub_resource type="Animation" id="Animation_gh76t"]
 resource_name = "Moving"
 length = 0.7
@@ -119,6 +92,33 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(19, 7), Vector2(19, 7), Vector2(21, 6), Vector2(24, 4.6), Vector2(21, 6)]
+}
+
+[sub_resource type="Animation" id="Animation_i6tp7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../HitComponent/CollisionShape2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.5, 5.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitComponent/CollisionShape2D:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 19)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_25dki"]
