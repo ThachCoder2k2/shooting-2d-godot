@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2jldb488g6r5"
-path="res://.godot/imported/boxer_enemy_attack-Sheet.png-5a49eec2d388026e2513c0f41de9788a.ctex"
+uid="uid://48gfg624tft4"
+path="res://.godot/imported/tiles_packed.png-cbfd34122c8cb1ed45b0f587bb88aa23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/boxer_enemy_attack-Sheet.png"
-dest_files=["res://.godot/imported/boxer_enemy_attack-Sheet.png-5a49eec2d388026e2513c0f41de9788a.ctex"]
+source_file="res://Assets/Sprites/Tiles/tiles_packed.png"
+dest_files=["res://.godot/imported/tiles_packed.png-cbfd34122c8cb1ed45b0f587bb88aa23.ctex"]
 
 [params]
 

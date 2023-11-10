@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dus2nkeelmo5c"
-path="res://.godot/imported/bullet_enemy-Sheet.png-9ce00eafffbad78347470199cf393fc9.ctex"
+uid="uid://dlbrk48jgyryx"
+path="res://.godot/imported/enemy_boxer.png-f4e95accb8e4441802065f04e8996050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/bullet_enemy-Sheet.png"
-dest_files=["res://.godot/imported/bullet_enemy-Sheet.png-9ce00eafffbad78347470199cf393fc9.ctex"]
+source_file="res://Assets/Sprites/Enemies/enemy_boxer.png"
+dest_files=["res://.godot/imported/enemy_boxer.png-f4e95accb8e4441802065f04e8996050.ctex"]
 
 [params]
 

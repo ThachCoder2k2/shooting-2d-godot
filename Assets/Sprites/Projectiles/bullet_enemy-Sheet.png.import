@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d265q3q31q6wn"
-path="res://.godot/imported/snow-expansion.png-6d4f287f1979f9d2523a6cceda539c6c.ctex"
+uid="uid://dus2nkeelmo5c"
+path="res://.godot/imported/bullet_enemy-Sheet.png-8f88de5f95f153fafc7ca6b264e4aa4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/snow-expansion.png"
-dest_files=["res://.godot/imported/snow-expansion.png-6d4f287f1979f9d2523a6cceda539c6c.ctex"]
+source_file="res://Assets/Sprites/Projectiles/bullet_enemy-Sheet.png"
+dest_files=["res://.godot/imported/bullet_enemy-Sheet.png-8f88de5f95f153fafc7ca6b264e4aa4f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1i12h1yq7r0r"
-path="res://.godot/imported/enemy_boxer_attack-Sheet.png-23c936952de584f593b8a6bfb8607d25.ctex"
+uid="uid://d2jldb488g6r5"
+path="res://.godot/imported/boxer_enemy_attack-Sheet.png-6e14c4b81a494538e0206932cbe34db1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/enemy_boxer_attack-Sheet.png"
-dest_files=["res://.godot/imported/enemy_boxer_attack-Sheet.png-23c936952de584f593b8a6bfb8607d25.ctex"]
+source_file="res://Assets/Sprites/Enemies/boxer_enemy_attack-Sheet.png"
+dest_files=["res://.godot/imported/boxer_enemy_attack-Sheet.png-6e14c4b81a494538e0206932cbe34db1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://48gfg624tft4"
-path="res://.godot/imported/tiles_packed.png-7d31261e02849e7a259e3e746bc64cc8.ctex"
+uid="uid://cuvxstqym24q6"
+path="res://.godot/imported/enemy_worm.png-6e0eb247ef5d3649fff6e4599e7e0bbb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tiles_packed.png"
-dest_files=["res://.godot/imported/tiles_packed.png-7d31261e02849e7a259e3e746bc64cc8.ctex"]
+source_file="res://Assets/Sprites/Enemies/enemy_worm.png"
+dest_files=["res://.godot/imported/enemy_worm.png-6e0eb247ef5d3649fff6e4599e7e0bbb.ctex"]
 
 [params]
 

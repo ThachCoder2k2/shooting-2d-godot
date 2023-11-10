@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy2dwl4bge8mm"
-path="res://.godot/imported/altar.png-367b0551a5e04b86836fe61b1d0a9a37.ctex"
+uid="uid://2j2vg13wre8s"
+path="res://.godot/imported/enemy_skeleton.png-38661b21063fcdfd47e9ae3b7fae64eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/altar.png"
-dest_files=["res://.godot/imported/altar.png-367b0551a5e04b86836fe61b1d0a9a37.ctex"]
+source_file="res://Assets/Sprites/Enemies/enemy_skeleton.png"
+dest_files=["res://.godot/imported/enemy_skeleton.png-38661b21063fcdfd47e9ae3b7fae64eb.ctex"]
 
 [params]
 

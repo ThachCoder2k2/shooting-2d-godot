@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfj6m4sh8b8px"
-path="res://.godot/imported/threeformsPJ2.png-de4cfacf34e2d9da88dab7ffa9e26cc9.ctex"
+uid="uid://daaxbeavu5xir"
+path="res://.godot/imported/Water_block.png-f0ad3ede53bc68ff06f1a55d091857b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/threeformsPJ2.png"
-dest_files=["res://.godot/imported/threeformsPJ2.png-de4cfacf34e2d9da88dab7ffa9e26cc9.ctex"]
+source_file="res://Assets/Sprites/Tiles/Water_block.png"
+dest_files=["res://.godot/imported/Water_block.png-f0ad3ede53bc68ff06f1a55d091857b6.ctex"]
 
 [params]
 

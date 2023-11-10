@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs5eswsftpr2g"]
+[gd_scene load_steps=7 format=3 uid="uid://7jdl6v38gt3j"]
 
-[ext_resource type="Texture2D" uid="uid://blwh7iupd8yrq" path="res://Assets/Bullet1-Sheet.png" id="1_2gvyk"]
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_r8a76"]
+[ext_resource type="Script" path="res://Scripts/Components/Gun components/bullet.gd" id="1_6y684"]
+[ext_resource type="Texture2D" uid="uid://blwh7iupd8yrq" path="res://Assets/Sprites/Projectiles/Bullet1-Sheet.png" id="2_r8b6i"]
 
 [sub_resource type="Animation" id="Animation_la2pq"]
 length = 0.001
@@ -34,12 +34,12 @@ radius = 3.0
 [node name="Bullet" type="Area2D" node_paths=PackedStringArray("animation_player")]
 collision_layer = 32
 collision_mask = 64
-script = ExtResource("1_r8a76")
+script = ExtResource("1_6y684")
 animation_player = NodePath("Sprite2D/AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_2gvyk")
+texture = ExtResource("2_r8b6i")
 hframes = 6
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]

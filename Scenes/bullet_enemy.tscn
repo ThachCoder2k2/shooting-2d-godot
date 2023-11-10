@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv5a43ux3fe63"]
+[gd_scene load_steps=7 format=3]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_l221s"]
-[ext_resource type="Texture2D" uid="uid://dus2nkeelmo5c" path="res://Assets/bullet_enemy-Sheet.png" id="2_djheg"]
+[ext_resource type="Script" path="res://Scripts/Components/Gun components/bullet.gd" id="1_l221s"]
+[ext_resource type="Texture2D" uid="uid://dus2nkeelmo5c" path="res://Assets/Sprites/Projectiles/bullet_enemy-Sheet.png" id="2_djheg"]
 
 [sub_resource type="Animation" id="Animation_b00aa"]
 length = 0.001

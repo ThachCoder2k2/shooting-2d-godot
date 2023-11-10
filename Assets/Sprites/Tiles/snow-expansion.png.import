@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c44sd68fokvh5"
-path="res://.godot/imported/Main_Character.png-3e8756ef8184f3813461ed9cd1d4a426.ctex"
+uid="uid://d265q3q31q6wn"
+path="res://.godot/imported/snow-expansion.png-eb0a648021f2eda07e3c02bc0862d0ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Main_Character.png"
-dest_files=["res://.godot/imported/Main_Character.png-3e8756ef8184f3813461ed9cd1d4a426.ctex"]
+source_file="res://Assets/Sprites/Tiles/snow-expansion.png"
+dest_files=["res://.godot/imported/snow-expansion.png-eb0a648021f2eda07e3c02bc0862d0ee.ctex"]
 
 [params]
 

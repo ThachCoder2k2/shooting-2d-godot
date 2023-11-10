@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://esggloc40cf8"]
+[gd_scene load_steps=6 format=3 uid="uid://bh1k3vyisk738"]
 
-[ext_resource type="Script" path="res://Scripts/weapon.gd" id="1_f6tm3"]
-[ext_resource type="Texture2D" uid="uid://d2id4bgvghfo0" path="res://Assets/Gun1.png" id="2_mswnu"]
+[ext_resource type="Script" path="res://Scripts/Components/Gun components/weapon.gd" id="1_gd6oa"]
+[ext_resource type="Texture2D" uid="uid://d2id4bgvghfo0" path="res://Assets/Sprites/Guns/Gun1.png" id="2_10y0q"]
 
 [sub_resource type="Animation" id="Animation_tco55"]
 length = 0.001
@@ -44,12 +44,12 @@ _data = {
 
 [node name="Gun" type="Node2D" parent="."]
 position = Vector2(-7, -5)
-script = ExtResource("1_f6tm3")
+script = ExtResource("1_gd6oa")
 
 [node name="Sprite2D" type="Sprite2D" parent="Gun"]
 texture_filter = 1
 position = Vector2(7, 5)
-texture = ExtResource("2_mswnu")
+texture = ExtResource("2_10y0q")
 offset = Vector2(6, -2.5)
 
 [node name="ShootAnimation" type="AnimationPlayer" parent="Gun/Sprite2D"]

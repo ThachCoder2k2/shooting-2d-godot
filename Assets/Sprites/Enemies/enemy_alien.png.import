@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daaxbeavu5xir"
-path="res://.godot/imported/Water_block.png-404b430072cf3207bce70b11e88915c4.ctex"
+uid="uid://bqovlqhns8mq0"
+path="res://.godot/imported/enemy_alien.png-20efc191e6182562bc49c1d821a6ef1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Water_block.png"
-dest_files=["res://.godot/imported/Water_block.png-404b430072cf3207bce70b11e88915c4.ctex"]
+source_file="res://Assets/Sprites/Enemies/enemy_alien.png"
+dest_files=["res://.godot/imported/enemy_alien.png-20efc191e6182562bc49c1d821a6ef1d.ctex"]
 
 [params]
 
