@@ -219,6 +219,10 @@ _player_sprite = NodePath("AnimationController")
 hand = NodePath("Hand")
 weapon = NodePath("")
 
+[node name="StatisticsComponent" type="Node2D" parent="."]
+script = ExtResource("3_7h23u")
+player_type = 1
+
 [node name="BlockCollision" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7)
 shape = SubResource("RectangleShape2D_3qnov")
@@ -242,9 +246,6 @@ position = Vector2(7, 4)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 1.0
-
-[node name="StatisticsComponent" type="Node2D" parent="."]
-script = ExtResource("3_7h23u")
 
 [node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "sprite")]
 collision_mask = 124

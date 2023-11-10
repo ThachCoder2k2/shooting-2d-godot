@@ -3,11 +3,15 @@ class_name HitComponent
 
 @export var health_component:StatisticsComponent
 @export var sprite:Sprite2D
+
+var get_hit=false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func GetHit(damage):
+	if health_component.player_type==0 and get_hit==false:
+		get_parent().get_node("DetectArea").get_node("CollisionShape2D").shape.radius = 250
 	damage(damage)
 
 func damage(damage):
