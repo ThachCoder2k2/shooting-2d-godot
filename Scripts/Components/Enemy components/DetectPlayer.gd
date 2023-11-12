@@ -16,8 +16,9 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	player_chase=false
-	player=null
+	if body.name=="Player":
+		player_chase=false
+		player=null
 
 
 func _on_area_entered(area):

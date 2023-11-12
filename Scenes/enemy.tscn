@@ -150,7 +150,6 @@ timer = NodePath("TimerAttack")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("2_pxf4k")
-max_health = 50
 health = 50
 speed = 200
 
@@ -182,12 +181,14 @@ libraries = {
 "": SubResource("AnimationLibrary_25dki")
 }
 
-[node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "sprite")]
+[node name="HitComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component", "detect_area", "sprite")]
+visible = false
 position = Vector2(-0.5, 5.75)
 collision_layer = 64
 collision_mask = 33
 script = ExtResource("6_1g02o")
 health_component = NodePath("../StatisticsComponent")
+detect_area = NodePath("../DetectArea/CollisionShape2D")
 sprite = NodePath("../AnimationController")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]

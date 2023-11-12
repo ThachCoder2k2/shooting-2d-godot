@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfj6m4sh8b8px"
-path="res://.godot/imported/threeformsPJ2.png-6f55403331db4239b4c85b57ff1a731b.ctex"
+uid="uid://yhxyjxvjbldo"
+path="res://.godot/imported/heart_full.png-5d355ff51817ab66951498252a1d4815.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Boss/threeformsPJ2.png"
-dest_files=["res://.godot/imported/threeformsPJ2.png-6f55403331db4239b4c85b57ff1a731b.ctex"]
+source_file="res://VanThinh/MenuHp_Mp_NhanVat/img/heart_full.png"
+dest_files=["res://.godot/imported/heart_full.png-5d355ff51817ab66951498252a1d4815.ctex"]
 
 [params]
 

@@ -3,6 +3,7 @@ class_name Bullet
 #@onready var tilemap = get_tree().root.get_node("Main/Map")
 
 @export var animation_player:AnimationPlayer
+@export var collision:CollisionShape2D
 
 #Statistics
 @export var speed =200
@@ -36,6 +37,7 @@ func _process(delta):
 	
 
 func OnDestroy():
+#	collision.disabled=true
 	animation_player.play("hit")
 	await animation_player.animation_finished
 	queue_free()

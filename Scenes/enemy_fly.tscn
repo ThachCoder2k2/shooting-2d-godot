@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3]
+[gd_scene load_steps=20 format=3 uid="uid://gypl85mgqgx2"]
 
 [ext_resource type="Script" path="res://Scripts/Components/Enemy components/enemy.gd" id="1_86cs5"]
 [ext_resource type="Script" path="res://Scripts/Components/Enemy_player components/HitComponent.gd" id="1_a7cm7"]
@@ -95,6 +95,7 @@ timer = NodePath("CloseRangedAttack/Timer")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("3_a2468")
+max_health = 150
 atk_damage = 20
 enemy_type = 1
 

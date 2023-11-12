@@ -35,9 +35,10 @@ func _ready():
 #		makepath()
 	
 func _physics_process(delta):
-#	print(state.cur_state)
+	pass
 #	if timerState.is_stopped():
 #		state.cur_state=state.State.SLEEPING
+
 	if timer.is_stopped():
 		state.allow_change_state=true
 #		print(statistics.enemy_type)
@@ -90,7 +91,7 @@ func _physics_process(delta):
 					statistics.health+=250
 					statistics.atk_damage*=2
 					statistics.atk_speed/=2
-					statistics.speed*=2
+					statistics.speed*=1.5
 					wakeup_once=false
 				else:
 					ChangeState(delta)

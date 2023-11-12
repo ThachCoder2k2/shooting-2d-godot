@@ -2,6 +2,7 @@ extends Area2D
 class_name HitComponent
 
 @export var health_component:StatisticsComponent
+@export var detect_area:CollisionShape2D
 @export var sprite:Sprite2D
 
 var get_hit=false
@@ -10,16 +11,22 @@ func _ready():
 	pass # Replace with function body.
 
 func GetHit(damage):
-	if health_component.player_type==0 and get_hit==false:
-		get_parent().get_node("DetectArea").get_node("CollisionShape2D").shape.radius = 250
+#	if health_component.player_type==0 and get_hit==false:
+#		detect_area.shape.radius = 250
 	damage(damage)
 
 func damage(damage):
 	damage_effect()
 	health_component.health-=damage
 	print(health_component.health)
+#Die
 	if health_component.health<=0:
 		get_parent().queue_free()
+
+func healall():
+	health_component.health+=200
+	if health_component.health>200:
+		health_component.health=200
 
 func damage_effect():
 	if get_parent().name=="Player":

@@ -1,9 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbojouxqgomt5"]
+[gd_scene load_steps=26 format=3 uid="uid://dbojouxqgomt5"]
 
 [ext_resource type="Script" path="res://Scripts/Components/Player components/player.gd" id="1_5lqmd"]
 [ext_resource type="Script" path="res://Scripts/Components/Enemy_player components/StatisticsComponent.gd" id="2_acryi"]
 [ext_resource type="Texture2D" uid="uid://c44sd68fokvh5" path="res://Assets/Sprites/Characters/Main_Character.png" id="3_mdl2g"]
 [ext_resource type="Script" path="res://Scripts/Components/Enemy_player components/HitComponent.gd" id="4_o4xv2"]
+[ext_resource type="PackedScene" uid="uid://d05vco8i8ru5d" path="res://VanThinh/MenuHp_Mp_NhanVat/menu_hp_mp.tscn" id="5_bbhpb"]
+[ext_resource type="Script" path="res://Scripts/Systems/UI.gd" id="5_mfm48"]
+[ext_resource type="Texture2D" uid="uid://cax4luly3eeue" path="res://VanThinh/MenuTamDung/img/tamdung.png" id="6_n6dvs"]
+[ext_resource type="PackedScene" uid="uid://cuhf2aekbiftb" path="res://VanThinh/MenuTamDung/menu_tam_dung.tscn" id="7_0n0jr"]
+[ext_resource type="PackedScene" uid="uid://ds0cmc38yk2uq" path="res://VanThinh/MenuCaiDat/menu_setting.tscn" id="8_4evid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3qnov"]
 size = Vector2(9, 6)
@@ -211,6 +216,21 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4yh7"]
 size = Vector2(9, 13)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxybh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0823529)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruelh"]
+bg_color = Color(0.6, 0.6, 0.6, 0.0901961)
+border_color = Color(0.8, 0.8, 0.8, 0.00784314)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_player_animation", "_player_sprite", "hand", "weapon")]
 collision_mask = 93
 script = ExtResource("1_5lqmd")
@@ -221,6 +241,8 @@ weapon = NodePath("")
 
 [node name="StatisticsComponent" type="Node2D" parent="."]
 script = ExtResource("2_acryi")
+max_health = 200
+health = 200
 player_type = 1
 
 [node name="BlockCollision" type="CollisionShape2D" parent="."]
@@ -232,7 +254,7 @@ texture_filter = 1
 texture = ExtResource("3_mdl2g")
 hframes = 6
 vframes = 11
-frame = 13
+frame = 48
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="AnimationController"]
 libraries = {
@@ -256,3 +278,37 @@ sprite = NodePath("../AnimationController")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_q4yh7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("5_mfm48")
+
+[node name="MenuHp_MP" parent="CanvasLayer" node_paths=PackedStringArray("statistics") instance=ExtResource("5_bbhpb")]
+statistics = NodePath("../../StatisticsComponent")
+
+[node name="button_tam_dung" type="Button" parent="CanvasLayer"]
+process_mode = 1
+offset_left = 1072.0
+offset_top = 31.0
+offset_right = 1128.0
+offset_bottom = 79.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_vxybh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ruelh")
+
+[node name="Tamdung" type="Sprite2D" parent="CanvasLayer/button_tam_dung"]
+texture_filter = 1
+position = Vector2(27, 42)
+scale = Vector2(0.477272, 0.572687)
+texture = ExtResource("6_n6dvs")
+
+[node name="menu_tam_dung" parent="CanvasLayer" node_paths=PackedStringArray("menuSetting", "HomeNode", "menuTamDung") instance=ExtResource("7_0n0jr")]
+visible = false
+position = Vector2(185, 127)
+menuSetting = NodePath("../menuSetting")
+HomeNode = NodePath("../..")
+menuTamDung = NodePath(".")
+
+[node name="menuSetting" parent="CanvasLayer" node_paths=PackedStringArray("menuSetting") instance=ExtResource("8_4evid")]
+visible = false
+menuSetting = NodePath(".")
+
+[connection signal="pressed" from="CanvasLayer/button_tam_dung" to="CanvasLayer" method="_on_button_tam_dung_pressed"]
